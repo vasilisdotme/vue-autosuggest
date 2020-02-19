@@ -1,6 +1,6 @@
 <template>
   <div :id="componentAttrIdAutosuggest">
-    <slot name="before-input" /><input
+    <div style="position:relative;"><slot name="before-input" /><input
       :type="internal_inputProps.type"
       :value="internalValue"
       :autocomplete="internal_inputProps.autocomplete"
@@ -15,7 +15,7 @@
       @input="inputHandler"
       @keydown="handleKeyStroke"
       v-on="listeners"
-    ><slot name="after-input" />
+    ><slot name="after-input" /></div>
     <div :class="componentAttrClassAutosuggestResultsContainer">
       <div 
         v-if="isOpen"
